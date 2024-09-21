@@ -10,10 +10,12 @@ from sqlalchemy.orm import Session
 from db import get_db
 from repository import users
 
+from config import SECRET_KEY
+
 
 class Auth:
     pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-    SECRET_KEY = "secret_key"
+    SECRET_KEY = SECRET_KEY
     ALGORITHM = "HS256"
     oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 

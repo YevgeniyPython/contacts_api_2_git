@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
-# from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-# from sqlalchemy import create_engine, Column, String, Integer
+from config import DATABASE_URL
 
 
-SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://postgres:qasd123*@localhost:5432/postgres"
+SQLALCHEMY_DATABASE_URL = DATABASE_URL
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -17,18 +17,9 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 #     email = Column(String(150), nullable=False, unique=True)
 #     password = Column(String(255), nullable=False)
 
-
-# Base.metadata.create_all(bind=engine)
-
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
-
-
-
-from sqlalchemy import create_engine, Column, String, Integer
-
-
