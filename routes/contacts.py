@@ -1,10 +1,11 @@
 from fastapi import Depends, HTTPException
 from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy.orm import Session
+from typing import List
+
 from repository import contacts as repository_contacts
 import models, schemas
-from db import engine, get_db
-from typing import List
+from db import get_db
 from services.auth import auth_service
 
 

@@ -1,11 +1,7 @@
-from sqlalchemy import Column, Integer, String, Boolean, func, Table, UniqueConstraint
+from sqlalchemy import Column, Integer, String, Date, func
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import ForeignKey
 from sqlalchemy.sql.sqltypes import DateTime
-from sqlalchemy.ext.declarative import declarative_base
-
-
-from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.ext.declarative import declarative_base
 
 from db import engine

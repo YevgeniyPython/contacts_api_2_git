@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 from repository import contacts
 from routes import contacts, auth
 import models

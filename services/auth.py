@@ -1,5 +1,4 @@
 from typing import Optional
-
 from jose import JWTError, jwt
 from fastapi import HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordBearer
@@ -9,7 +8,6 @@ from sqlalchemy.orm import Session
 
 from db import get_db
 from repository import users
-
 from config import SECRET_KEY
 
 
